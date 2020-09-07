@@ -3,5 +3,8 @@
     <account id="c82f5302-9648-40be-b060-e169cc0293bd" name="sharksonfire1@gmail.com">
       <server host="github.com" />
     </account>
+    <account id="c6c18705-bf0b-46be-ab7f-4d8a5dc5b2f8" name="AaronReginaldOsborne">
+      <server useHttp="false" host="github.com" />
+    </account>
   </component>
 </application>
