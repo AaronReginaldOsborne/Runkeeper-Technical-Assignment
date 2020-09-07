@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
@@ -64,7 +63,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             super(itemView);
             title = itemView.findViewById(R.id.achievemnt_title);
             description = itemView.findViewById(R.id.achievemnt_subtitle);
-            achievementImage = itemView.findViewById(R.id.imageView);
+            achievementImage = itemView.findViewById(R.id.achievement_image);
         }
     }
 }
