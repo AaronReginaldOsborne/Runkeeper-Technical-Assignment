@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView(){
 
         // apply just refers to achievementList
-        achivementList.apply {
+        achievementList.apply {
             layoutManager = GridLayoutManager(this@MainActivity, 2, GridLayoutManager.VERTICAL, false)
             achievementAdapter = AchievementRecyclerAdapter()
             adapter = achievementAdapter
