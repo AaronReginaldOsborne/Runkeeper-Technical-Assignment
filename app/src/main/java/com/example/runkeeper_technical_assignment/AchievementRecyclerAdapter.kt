@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -52,11 +53,13 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
         val achievement_title = itemView.achievemnt_title
         val achievement_subTitle = itemView.achievemnt_subtitle
         val achievement_image = itemView.achievement_image
-//        val achievement_isObtained = itemView. TODO:change color or opacity
         init {
             itemView.setOnClickListener {v: View->
                 val position:Int = adapterPosition
-                CustomAchievementModal(v.context, items[position]).show()
+
+                //disable pop up if not obtained
+                if(items[position].isObtained)
+                    CustomAchievementModal(v.context, items[position]).show()
             }
         }
 
@@ -73,6 +76,10 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
 
             achievement_title.text = achievement.title
             achievement_subTitle.text = achievement.subTitle
+
+            //change color if disabled
+            if(!achievement.isObtained)
+                achievement_image.setColorFilter(ContextCompat.getColor(itemView.context, R.color.colorGrey), android.graphics.PorterDuff.Mode.MULTIPLY);
         }
     }
 
