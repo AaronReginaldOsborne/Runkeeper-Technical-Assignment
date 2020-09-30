@@ -79,7 +79,7 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
 
             //change color if disabled
             if(!achievement.isObtained)
-                achievement_image.setColorFilter(ContextCompat.getColor(itemView.context, R.color.colorGrey), android.graphics.PorterDuff.Mode.MULTIPLY);
+                achievement_image.setColorFilter(ContextCompat.getColor(itemView.context, R.color.colorGrey), android.graphics.PorterDuff.Mode.MULTIPLY)
         }
     }
 
