@@ -9,7 +9,7 @@ class DataSource {
                     Achievement(
                             "Longest Run",
                             "00:00",
-                            R.mipmap.ic_achievement_1,
+                            "https://imgur.com/Xm7hS5u.png",
                             true
                     )
             )
@@ -17,7 +17,7 @@ class DataSource {
                     Achievement(
                             "Highest Elevation",
                             "00:00",
-                            R.mipmap.ic_achievement_2,
+                            "https://imgur.com/FmRA85t.png",
                             true
                     )
             )
@@ -26,7 +26,7 @@ class DataSource {
                     Achievement(
                             "Fastest 5k",
                             "00:00",
-                            R.mipmap.ic_achievement_3,
+                            "https://imgur.com/gWNWMpU.png",
                             true
                     )
             )
@@ -34,7 +34,7 @@ class DataSource {
                     Achievement(
                             "10k",
                             "00:00",
-                            R.mipmap.ic_achievement_4,
+                            "https://imgur.com/gqCqeun.png",
                             true
                     )
             )
@@ -42,7 +42,7 @@ class DataSource {
                     Achievement(
                             "Half Marathon",
                             "00:00",
-                            R.mipmap.ic_achievement_5,
+                            "https://imgur.com/83LHqtR.png",
                             true
                     )
             )
@@ -50,7 +50,7 @@ class DataSource {
                     Achievement(
                             "Marathon",
                             "00:00",
-                            R.mipmap.ic_achievement_6,
+                            "https://imgur.com/WRAVrA2.png",
                             true
                     )
             )
@@ -63,7 +63,7 @@ class DataSource {
                     Achievement(
                             "Virtual Half Marathon Race!",
                             "00:00",
-                            R.mipmap.ic_achievement_7,
+                             "https://imgur.com/z56arbx.png",
                             true
                     )
             )
@@ -71,7 +71,7 @@ class DataSource {
                     Achievement(
                             "Tokyo-Hakone Ekiden 2020",
                             "00:00:00",
-                            R.mipmap.ic_achievement_8,
+                            "https://imgur.com/0cQvUdY.png",
                             true
                     )
             )
@@ -80,7 +80,7 @@ class DataSource {
                     Achievement(
                             "Virtual 10k Race",
                             "00:00:00",
-                            R.mipmap.ic_achievement_9,
+                            "https://imgur.com/KAq7eDt.png",
                             true
                     )
             )
@@ -88,7 +88,7 @@ class DataSource {
                     Achievement(
                             "Hakone Ekiden",
                             "00:00:00",
-                            R.mipmap.ic_achievement_10,
+                            "https://imgur.com/0YQRMu4.png",
                             true
                     )
             )
@@ -96,7 +96,7 @@ class DataSource {
                     Achievement(
                             "Mizuno Singapore Ekiden 2015",
                             "00:00:00",
-                            R.mipmap.ic_achievement_11,
+                            "https://imgur.com/6XqaHF3.png",
                             true
                     )
             )
@@ -104,7 +104,7 @@ class DataSource {
                     Achievement(
                             "Virtual 5K Race",
                             "23:07",
-                            R.mipmap.ic_achievement_12,
+                            "https://imgur.com/pPRHsiy.png",
                             true
                     )
             )
