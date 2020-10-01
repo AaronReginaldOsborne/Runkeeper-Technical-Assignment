@@ -1,5 +1,6 @@
 package com.example.runkeeper_technical_assignment
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -29,9 +30,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRecyclerView(){
 
+        val orientation = resources.configuration.orientation
+        val numRows = if (orientation == Configuration.ORIENTATION_LANDSCAPE)
+            3
+        else
+            2
+
         // apply just refers to achievementList
         achievementList.apply {
-            layoutManager = GridLayoutManager(this@MainActivity, 2, GridLayoutManager.VERTICAL, false)
+            layoutManager = GridLayoutManager(this@MainActivity, numRows, GridLayoutManager.VERTICAL, false)
             achievementAdapter = AchievementRecyclerAdapter()
             adapter = achievementAdapter
         }
@@ -41,9 +48,10 @@ class MainActivity : AppCompatActivity() {
         // achivementList.adapter = achievementAdapter
 
         virtualRaceList.apply {
-            layoutManager = GridLayoutManager(this@MainActivity, 2, GridLayoutManager.VERTICAL, false)
+            layoutManager = GridLayoutManager(this@MainActivity, numRows, GridLayoutManager.VERTICAL, false)
             virtualRaceAdapter = AchievementRecyclerAdapter()
             adapter = virtualRaceAdapter
         }
+
     }
 }
