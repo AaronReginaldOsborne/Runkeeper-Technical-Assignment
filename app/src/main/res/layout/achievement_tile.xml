@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/achievement_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/achievemnt_title"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/place_holder_text"
         android:textAlignment="center"

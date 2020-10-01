@@ -22,14 +22,37 @@
             android:layout_height="wrap_content"
             tools:context=".MainActivity">
 
-            <TextView
-                android:id="@+id/achievement_header1"
-                style="@style/AppTheme.Header"
-                android:text="@string/personal_records"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+            <View
+                android:id="@+id/background1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="#F7F7F7"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/personal_records"
+                style="@style/AppTheme.Header"
+                app:layout_constraintBottom_toBottomOf="@+id/background1"
+                app:layout_constraintEnd_toEndOf="@+id/background1"
+                app:layout_constraintStart_toEndOf="@+id/imageView1"
+                app:layout_constraintTop_toTopOf="@+id/background1" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/background1"
+                app:layout_constraintStart_toStartOf="@+id/background1"
+                app:layout_constraintTop_toTopOf="@+id/background1"
+                app:srcCompat="@drawable/ic_achievement"
+                android:contentDescription="ic_achievement" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/achievementList"
@@ -37,15 +60,40 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/achievement_header1" />
+                app:layout_constraintTop_toBottomOf="@+id/background1" />
 
-            <TextView
-                android:id="@+id/achievement_header2"
-                style="@style/AppTheme.Header"
-                android:text="@string/virtual_races"
+            <View
+                android:id="@+id/background2"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="#F7F7F7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/achievementList" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/virtual_races"
+                style="@style/AppTheme.Header"
+                app:layout_constraintBottom_toBottomOf="@+id/background2"
+                app:layout_constraintEnd_toEndOf="@+id/background2"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/background2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/background2"
+                app:layout_constraintStart_toStartOf="@+id/background2"
+                app:layout_constraintTop_toTopOf="@+id/background2"
+                app:srcCompat="@drawable/ic_running"
+                android:contentDescription="ic_running" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/virtualRaceList"
@@ -53,7 +101,9 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/achievement_header2" />
+                app:layout_constraintTop_toBottomOf="@+id/background2" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
