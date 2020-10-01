@@ -1,13 +1,20 @@
 package com.example.runkeeper_technical_assignment
 
+import android.app.AlertDialog
+import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.runkeeper_technical_assignment.model.Achievement
 import kotlinx.android.synthetic.main.achievement_tile.view.*
+import nl.dionsegijn.konfetti.models.Shape
+import nl.dionsegijn.konfetti.models.Size
 import kotlin.collections.ArrayList
 
 class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder>()
@@ -17,7 +24,8 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return AchievementViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.achievement_tile, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.achievement_tile, parent, false),
+                items
         )
     }
 
@@ -26,7 +34,6 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
             is AchievementViewHolder -> {
                 holder.bind(items[position])
             }
-
         }
     }
 
@@ -40,15 +47,23 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
 
     class AchievementViewHolder
     constructor(
-            itemView: View
+            itemView: View,
+            items: List<Achievement> = ArrayList()
     ): RecyclerView.ViewHolder(itemView){
-
         val achievement_title = itemView.achievemnt_title
         val achievement_subTitle = itemView.achievemnt_subtitle
         val achievement_image = itemView.achievement_image
-//        val achievement_isObtained = itemView.blog_author
+        init {
+            itemView.setOnClickListener {v: View->
+                val position:Int = adapterPosition
 
-        fun bind(achievementTile: Achievement){
+                //disable pop up if not obtained
+                if(items[position].isObtained)
+                    CustomAchievementModal(v.context, items[position]).show()
+            }
+        }
+
+        fun bind(achievement: Achievement){
 
             val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_background)
@@ -56,11 +71,15 @@ class AchievementRecyclerAdapter :  RecyclerView.Adapter<RecyclerView.ViewHolder
 
             Glide.with(itemView.context)
                     .applyDefaultRequestOptions(requestOptions)
-                    .load(achievementTile.image)
+                    .load(achievement.image)
                     .into(achievement_image)
-            achievement_title.setText(achievementTile.title)
-            achievement_subTitle.setText(achievementTile.subTitle)
 
+            achievement_title.text = achievement.title
+            achievement_subTitle.text = achievement.subTitle
+
+            //change color if disabled
+            if(!achievement.isObtained)
+                achievement_image.alpha = 0.5f
         }
     }
 
