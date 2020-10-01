@@ -10,7 +10,7 @@ class DataSource {
                             "Longest Run",
                             "00:00",
                             "https://imgur.com/Xm7hS5u.png",
-                            true
+                            false
                     )
             )
             list.add(
